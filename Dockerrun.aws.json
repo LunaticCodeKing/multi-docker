@@ -1,29 +1,33 @@
 {
-  "AWSEBDockerrunVersion": 2,
+  "AWSEBDockerrunVersion": 3,
   "containerDefinitions": [
     {
       "name": "client",
       "image": "lunaticpraveen/multi-client",
       "hostname": "client",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "server",
       "image": "lunaticpraveen/multi-server",
       "hostname": "api",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "worker",
       "image": "lunaticpraveen/multi-worker",
       "hostname": "worker",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "nginx",
       "image": "lunaticpraveen/multi-nginx",
       "hostname": "nginx",
       "essential": true,
+      "memory": 128,
       "portmapping": [
         {
           "hostPort": 80,
